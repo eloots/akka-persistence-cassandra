@@ -123,7 +123,7 @@ import scala.concurrent.duration._
               "Received sequence numbers out of order. Pid: {}. HighestSeq: {}. New events: {}. Buffered events: {}",
               s.persistenceId, seqNr, newEvents, currentBuffer)
             throw new IllegalStateException(s"Not received sequence numbers in order for pid: ${s.persistenceId}, " +
-              s"current highest sequenceNr: ${sequenceNrs(s.persistenceId)}. Sequence nr in event: ${seqNr}")
+              s"current highest sequenceNr: ${sequenceNrs(s.persistenceId)}. Sequence nr in event: $seqNr")
           }
           sequenceNrs += (s.persistenceId -> s.sequenceNr)
         case None =>
